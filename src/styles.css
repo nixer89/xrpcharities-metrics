@@ -49,7 +49,7 @@ body .ui-widget-content p {
 }
 
 .mat-toolbar.mat-secondary {
-    background: rgb(117, 116, 116);
+    background: rgb(109, 108, 108);
     color: white;
 }
 
@@ -175,7 +175,7 @@ label.xrpraised {
     text-align: center;
     border: none;
     background-color: transparent;
-    color: #B92828;
+    color: black;
     font-size: 2.5em;
     font-weight: bold;
     margin-top: 0.8em;
