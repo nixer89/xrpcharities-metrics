@@ -123,10 +123,10 @@ div.prototype_stamp {
 
 .topbar-logo {
     display: flex;
-    width: 85px;
+    width: 96px;
     height: 60px;
     background: url("assets/layout/images/logo.png") top left no-repeat;
-    background-size: 85px 60px;
+    background-size: 96px 60px;
 }
 
 .charities-logo {
@@ -134,6 +134,13 @@ div.prototype_stamp {
     height: 260px;
     background: url("assets/layout/images/logo.png") top left no-repeat;
     background-size: 420px 260px;
+}
+.charities-logo-small {
+    width: 112px;
+    height: 70px;
+    background: url("assets/layout/images/logo.png") top left no-repeat;
+    background-size: 112px 70px;
+    margin-left: 1em;
 }
 
 .topbar-middle {
