@@ -27,8 +27,9 @@ export class MainComponent implements OnInit {
   onemorehome:Charity = {handle: 'onemorehome', id:'1080843472129658880', addInfo:'', balance: 0, overallReceived: 0, isProcessing: true, isInternalProcessing: false}
   cote_uk:Charity = {handle: 'cote_uk', id:'21855719', addInfo:'', balance: 0, overallReceived: 0, isProcessing: true, isInternalProcessing: false}
   goodxrp:Charity = {handle: 'GoodXrp', id:'1059563470952247296', addInfo:' (tip splitter bot)', balance: 0, overallReceived: 0, isProcessing: true, isInternalProcessing: false, startDate: '2019-03-19'}
+  companyOfDogs:Charity = {handle: 'Company_of_Dogs', id:'2247390110', addInfo:'', balance: 0, overallReceived: 0, isProcessing: true, isInternalProcessing: false}
 
-  charities:Charity[] = [this.goodxrp,this.stjude,this.wanderingware,this.cranders71,this.bigbuckor,this.onemorehome,this.cote_uk,this.xrpcharities]
+  charities:Charity[] = [this.goodxrp,this.stjude,this.wanderingware,this.cranders71,this.bigbuckor,this.onemorehome,this.cote_uk,this.companyOfDogs,this.xrpcharities]
 
   allCharitiesReceived:number=0;
   allCharitiesReceivedTmp:number=0;
