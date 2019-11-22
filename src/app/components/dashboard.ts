@@ -41,12 +41,13 @@ export class DashboardComponent implements OnInit {
             {handle:'GoodXrp', id:'1059563470952247296', startDate: '2019-03-19'},
             {handle:'StJude', id:'9624042'},
             {handle:'WanderingWare', id:'3443786712'},
-            {handle:'cranders71', id:'970803226470531072', startDate: '2018-10-31'},
+            {handle:'AmwFund', id:'1187153090186600448'},
             {handle:'bigbuckor', id:'951179206104403968', startDate: '2018-10-15'},
             {handle:'onemorehome', id:'1080843472129658880'},
             {handle:'cote_uk', id:'21855719'},
             {handle:'Company_of_Dogs', id:'2247390110'},
             {handle:'Veteranet1', id:'1123635064204595201'},
+            {handle:'cranders71', id:'970803226470531072', startDate: '2018-10-31'},
         ]
         this.selectedCharity = this.availableCharities[0];
 
