@@ -274,6 +274,7 @@ export class StatisticsService {
         promises.push(this.api.callTipBotStdFeedApi('to=cote_uk&to_network=twitter&type=tip&excludeUser=["1059563470952247296"]&limit=100'));
         promises.push(this.api.callTipBotStdFeedApi('to=company_of_dogs&to_network=twitter&type=tip&excludeUser=["1059563470952247296"]&limit=100'));
         promises.push(this.api.callTipBotStdFeedApi('to=veteranet1&to_network=twitter&type=tip&excludeUser=["1059563470952247296"]&limit=100'));
+        promises.push(this.api.callTipBotStdFeedApi('to=casadeamparo&to_network=twitter&type=tip&excludeUser=["1059563470952247296"]&limit=100'));
 
         let latestTips:any[] = await Promise.all(promises);
 

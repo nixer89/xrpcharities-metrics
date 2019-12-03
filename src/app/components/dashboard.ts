@@ -47,6 +47,7 @@ export class DashboardComponent implements OnInit {
             {handle:'cote_uk', id:'21855719'},
             {handle:'Company_of_Dogs', id:'2247390110'},
             {handle:'Veteranet1', id:'1123635064204595201'},
+            {handle:'casadeamparo', id: '163916324'},
             {handle:'cranders71', id:'970803226470531072', startDate: '2018-10-31'},
         ]
         this.selectedCharity = this.availableCharities[0];
