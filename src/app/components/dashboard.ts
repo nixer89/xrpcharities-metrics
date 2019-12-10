@@ -176,7 +176,10 @@ export class DashboardComponent implements OnInit {
                             lineDataTime.push(this.resolveMonth(keyMonth));
                         }
 
-                        lineDataXRP.push(lineData[keyYear][keyMonth])
+                        if(this.selectedCharity.id==='951179206104403968')
+                            lineDataXRP.push(((lineData[keyYear][keyMonth]*1000000)-(1089.75*1000000))/1000000)
+                        else
+                            lineDataXRP.push(lineData[keyYear][keyMonth])
                     }
                 }
             }
