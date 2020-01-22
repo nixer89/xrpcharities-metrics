@@ -15,9 +15,9 @@ interface Charity {
 })
 export class DashboardComponent implements OnInit {
 
-    @ViewChild ('barChart') barChart: ChartModule;
+    @ViewChild('barChart', { static: true }) barChart: ChartModule;
 
-    @ViewChild ('linesChart') linesChart: ChartModule;
+    @ViewChild('linesChart', { static: true }) linesChart: ChartModule;
 
     chartDataBars: any;
     chartDataLines: any;
