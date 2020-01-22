@@ -77,6 +77,6 @@ export class LatestDonorsComponent implements OnInit {
     }
 
     formatDate(date:string) {
-        return formatUtil.dateToStringEuropeForLocale(formatUtil.initializeStringDateAsGMT1(date));
+        return formatUtil.dateToStringEuropeForLocale(new Date(date));
     }
 }
