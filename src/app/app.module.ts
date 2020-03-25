@@ -10,6 +10,7 @@ import {AppRoutes} from './app.routes';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 // PrimeNG
 import {AccordionModule} from 'primeng/primeng';
@@ -42,12 +43,14 @@ import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {ToggleButtonModule} from 'primeng/togglebutton';
 import {ChartModule} from 'primeng/chart';
 import {DropdownModule} from 'primeng/dropdown';
+import {DialogModule} from 'primeng/dialog';
 
 //App
 import { AppComponent } from './app.component';
 import {AppTopbarComponent}  from './components/topbar';
 import {AppFooterComponent}  from './components/footer';
 import { DashboardComponent } from './components/dashboard';
+import {XummPaymentComponent} from './components/xummPaymentRequest';
 
 //my components
 import {MainComponent} from './pages/main';
@@ -61,6 +64,10 @@ import {HowItWorksComponent} from './pages/howitworks';
 import { AppService } from './services/app.service';
 import { ApiService } from './services/api.service';
 import { StatisticsService } from './services/statistics.service';
+import { XummService } from './services/xumm.service';
+
+//special
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 @NgModule({
   declarations: [
@@ -68,6 +75,7 @@ import { StatisticsService } from './services/statistics.service';
     AppTopbarComponent,
     AppFooterComponent,
     DashboardComponent,
+    XummPaymentComponent,
     MainComponent,
     LatestDonorsComponent,
     StatisticsComponent,
@@ -86,6 +94,7 @@ import { StatisticsService } from './services/statistics.service';
     MatToolbarModule,
     MatButtonModule,
     MatTooltipModule,
+    MatSnackBarModule,
     // PrimeNG:
     AccordionModule,
     AutoCompleteModule,
@@ -116,9 +125,11 @@ import { StatisticsService } from './services/statistics.service';
     ProgressSpinnerModule,
     ToggleButtonModule,
     ChartModule,
-    DropdownModule
+    DropdownModule,
+    DialogModule,
+    DeviceDetectorModule.forRoot()
   ],
-  providers: [AppService,ApiService,StatisticsService],
+  providers: [AppService,ApiService,StatisticsService,XummService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

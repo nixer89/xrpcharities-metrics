@@ -1,27 +1,37 @@
 <mat-toolbar id="primarybar" color="primary" class="mat-elevation-z6">
     <span class="topbar-logo"></span>
-    <span class="topbar-middle">GSG Charities XRP metrics page</span>
+    <span class="topbar-middle">GSG Charities XRP metrics page</span> 
     <div class="floatright tipbotheader">
         <a amount="0.5" size="275" to="GoodXrp" network="twitter" href="https://www.xrptipbot.com" label="Send @GoodXrp" labelpt="Thank you!" target="_blank"></a>
     </div>
 </mat-toolbar>
 <mat-toolbar id="secondarybar" color="secondary" class="mat-elevation-z6">
-    <button mat-button [routerLink]="['/']" matTooltip="Home">
-        <i class="material-icons topbar-menu-icon">home</i> Home
-    </button>
-    <button mat-button [routerLink]="['/donors']" matTooltip="Donors">
-        <i class="material-icons topbar-menu-icon">card_giftcard</i> Donors
-    </button>
-    <button mat-button [routerLink]="['/statistics']" matTooltip="Statistics">
-        <i class="material-icons topbar-menu-icon">show_chart</i> Statistics
-    </button>
-    <button mat-button [routerLink]="['/aboutus']" matTooltip="About us">
-        <i class="material-icons topbar-menu-icon">people</i> About us
-    </button>
-    <button mat-button [routerLink]="['/whatwedo']" matTooltip="What we do">
-        <i class="material-icons topbar-menu-icon">thumb_up</i> What we do
-    </button>
-    <button mat-button [routerLink]="['/howitworks']" matTooltip="How it works">
-        <i class="material-icons topbar-menu-icon">help</i> How it works
-    </button>
+    <div class="ui-g-12">
+        <div class="floatleft">
+            <button mat-button [routerLink]="['/']" matTooltip="Home" style="font-size: 0.9em;">
+                <i class="material-icons topbar-menu-icon">home</i> Home
+            </button>
+            <button mat-button [routerLink]="['/donors']" matTooltip="Donors" style="font-size: 0.9em;">
+                <i class="material-icons topbar-menu-icon">card_giftcard</i> Donors
+            </button>
+            <button mat-button [routerLink]="['/statistics']" matTooltip="Statistics" style="font-size: 0.9em;">
+                <i class="material-icons topbar-menu-icon">show_chart</i> Statistics
+            </button>
+            <button mat-button [routerLink]="['/aboutus']" matTooltip="About us" style="font-size: 0.9em;">
+                <i class="material-icons topbar-menu-icon">people</i> About us
+            </button>
+            <button mat-button [routerLink]="['/whatwedo']" matTooltip="What we do" style="font-size: 0.9em;">
+                <i class="material-icons topbar-menu-icon">thumb_up</i> What we do
+            </button>
+            <button mat-button [routerLink]="['/howitworks']" matTooltip="How it works" style="font-size: 0.9em;">
+                <i class="material-icons topbar-menu-icon">help</i> How it works
+            </button>
+        </div>
+        <div class="floatright">
+            <button mat-button matTooltip="Make a donation to GoodXrp via XUMM!" tooltipPosition="left" (click)="donate()" style="padding:0px;">
+                <img src="../../assets/xummPay.svg" style="width: 150px; height: 45px;" alt="Pay with XUMM">
+            </button>
+        </div>  
+    </div>
 </mat-toolbar>
+<xummPaymentRequest *ngIf="openDialog" (userSigned)="closeDialog()"></xummPaymentRequest>

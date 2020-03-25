@@ -58,7 +58,7 @@ body .ui-widget-content p {
 }
 
 #secondarybar.mat-toolbar-single-row {
-    height: 36px;
+    height: 50px;
 }
 
 div.prototype_stamp {
@@ -225,4 +225,16 @@ label.xrpraised {
 .div-cards {
     justify-content: center;
     width: 99%;    
+}
+
+body .snackbar-success {
+    color: green !important;
+    display: flex;
+    justify-content: center;
+}
+  
+body .snackbar-failed {
+    color: #EB0000 !important;
+    display: flex;
+    justify-content: center;
 }

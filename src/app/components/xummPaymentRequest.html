@@ -1,0 +1,64 @@
+<p-dialog header="Make a donation to GoodXrp." [style]="{width: '500px', height: '500px'}" [visible]="true" [closable]="false" (onHide)="closing()">
+        <p-card>
+            <div *ngIf="loading && !showError && !waitingForPayloadResolved" class="center-screen">
+                <p-progressSpinner [style]="{width: '50px', height: '50px'}"></p-progressSpinner>
+            </div>
+            <div *ngIf="!loading && !showError && waitingForPayloadResolved" class="center-screen">
+                <div *ngIf="qrLink">
+                    <div class="center-screen">
+                        Scan QR code:
+                    </div>
+                    <div>
+                        <p-progressSpinner *ngIf="!showQR" [style]="{width: '50px', height: '50px'}"></p-progressSpinner>
+                    </div>
+                    <br/>
+                    <img (load)="QRLoaded()" [src]="qrLink" width="150" height="150" class="center-screen">
+                    <br/><br/>
+                </div>
+                <div style="height: 55px; display:flex; align-items: center; padding-top: 3em;" class="center-screen">
+                    <div>
+                        Waiting for transaction confirmation...&nbsp;
+                    </div>
+                    <p-progressSpinner [style]="{width: '50px', height: '50px'}"></p-progressSpinner>
+                </div>
+                <div style="padding-top: 2em;">
+                    <button mat-button pTooltip="Close" tooltipPosition="right" (click)="closeIt()" style="width: 120; height: 30;">
+                        <b>Cancel </b>
+                        <i class="material-icons" style="color: red">
+                            cancel
+                        </i>
+                    </button>
+                </div>
+            </div>
+            <div *ngIf="showError && !waitingForPayloadResolved && !loading" class="center-screen">
+                <div *ngIf="!requestExpired && backendNotAvailable" style="color: red;">
+                    Sorry, there was an error contacting the backend. Please try again later.
+                </div>
+                <div *ngIf="!requestExpired && !backendNotAvailable" style="color: red;">
+                    Sorry, your transaction could not be verified on the live net.<br/>
+                    Please reload the page and try again!
+                </div>
+                <div *ngIf="requestExpired && !backendNotAvailable" style="color: red;">
+                    Sorry, your request has been expired. Please reload the page and try again!
+                </div>
+                
+
+                <button mat-button pTooltip="Close" tooltipPosition="right" (click)="closeIt()" style="width: 120; height: 30;">
+                    <b>Close </b>
+                    <i class="material-icons">
+                        cancel
+                    </i>
+                </button>
+            </div>
+            <div *ngIf="paymentReceived" class="center-screen">
+                <div>
+                    <i class="material-icons" style="color: green; font-size: 3em;">
+                        check_circle_outline
+                    </i>
+                </div>
+                <div>
+                    <h4 style="color: green;">Thank you for your donation!</h4><br>You will be redirected back shortly.
+                </div>
+            </div>
+        </p-card>
+</p-dialog>

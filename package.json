@@ -1,6 +1,6 @@
 {
   "name": "xrpcharities-metrics",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Metrics page for the XRP Charities",
   "main": "main.ts",
   "scripts": {
@@ -44,6 +44,7 @@
     "core-js": "^2.6.10",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
+    "ngx-device-detector": "^1.4.1",
     "primeicons": "^2.0.0",
     "primeng": "^8.1.1",
     "quill": "^1.3.7",
@@ -56,9 +57,11 @@
     "@angular/cli": "^8.3.23",
     "@angular/compiler-cli": "^8.2.14",
     "@angular/language-service": "^8.2.14",
+    "@babel/compat-data": "~7.8.0",
     "@types/jasmine": "^2.8.16",
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "^10.17.5",
+    "@types/xumm-api": "^0.1.0",
     "codelyzer": "^5.0.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
