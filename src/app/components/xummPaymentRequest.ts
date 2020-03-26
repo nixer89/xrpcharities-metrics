@@ -40,35 +40,9 @@ export class XummPaymentComponent implements OnInit {
         this.loading = true;
 
         //setting up xumm payload and waiting for websocket
-        let xummPayload:XummPostPayloadBodyJson = {
-            options: {
-                expire: 5
-            },
-	        txjson: {
-                TransactionType: "Payment",
-                Fee: "12"
-            }
-        }
-    
-        let genericXummBackendRequest:GenericBackendPostRequest = {
-            options: {
-                web: this.deviceDetector.isDesktop(),
-            },
-            payload: xummPayload
-        }
-        
-        let refererURL:string;
-
-        if(document.URL.includes('?')) {
-            refererURL = document.URL.substring(0, document.URL.indexOf('?'));
-        }
-
-        genericXummBackendRequest.options.referer = (refererURL ? refererURL : document.URL);
-
-        let xummResponse:XummPostPayloadResponse;
+        let xummResponse:XummPostPayloadResponse; 
         try {
-            console.log("sending xumm payload: " + JSON.stringify(genericXummBackendRequest));
-            xummResponse = await this.xummApi.submitPayload(genericXummBackendRequest);
+            xummResponse = await this.xummApi.initiatePayment(this.deviceDetector.isDesktop() ? 'web':'app');
             console.log(JSON.stringify(xummResponse)); 
         } catch (err) {
             console.log(JSON.stringify(err));

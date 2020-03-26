@@ -19,6 +19,15 @@ export class XummService {
         }
     }
 
+    async initiatePayment(type:string): Promise<XummPostPayloadResponse> {
+        try {
+            return this.app.get(this.xummBackendURL+"/api/v1/initiate/simplePayment/"+type);
+        } catch(err) {
+            console.log(JSON.stringify(err))
+            return null;
+        }
+    }
+
     async getPayloadInfo(payloadId:string): Promise<XummGetPayloadResponse> {
         try {
             return this.app.get(this.xummBackendURL+"/api/v1/platform/payload/"+payloadId);
