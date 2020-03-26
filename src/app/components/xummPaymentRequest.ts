@@ -2,8 +2,8 @@ import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { XummService } from '../services/xumm.service';
 import { webSocket, WebSocketSubject} from 'rxjs/webSocket';
 import { DeviceDetectorService } from 'ngx-device-detector';
-import { GenericBackendPostRequest, TransactionValidation } from '../util/types';
-import { XummPostPayloadBodyJson, XummPostPayloadResponse } from 'xumm-api';
+import { TransactionValidation } from '../util/types';
+import { XummPostPayloadResponse } from 'xumm-api';
 
 @Component({
     selector: "xummPaymentRequest",
