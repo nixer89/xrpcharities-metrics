@@ -15,6 +15,7 @@ export const routes:Routes = [
     {path: 'aboutus', component: AboutUsComponent},
     {path: 'whatwedo', component: WhatWeDoComponent},
     {path: 'howitworks', component: HowItWorksComponent},
+    {path: '**', redirectTo: ''}
 ];
 
 export const AppRoutes: ModuleWithProviders = RouterModule.forRoot(routes);
