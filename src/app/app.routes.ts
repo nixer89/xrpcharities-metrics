@@ -10,8 +10,8 @@ import {HowItWorksComponent} from './pages/howitworks';
 
 export const routes:Routes = [
     {path: '', component: MainComponent},
-    {path: 'donors', component: LatestDonorsComponent},
-    {path: 'statistics', component: StatisticsComponent},
+    //{path: 'donors', component: LatestDonorsComponent},
+    //{path: 'statistics', component: StatisticsComponent},
     {path: 'aboutus', component: AboutUsComponent},
     {path: 'whatwedo', component: WhatWeDoComponent},
     {path: 'howitworks', component: HowItWorksComponent},

@@ -10,16 +10,6 @@ export class StatisticsService {
     async calculateBalances(charity:any): Promise<any[]> {
         try {
             let tipbotFeed = await this.api.callTipBotPublicPage(charity.handle);
-            let xrpDeposited = 0;
-
-            if(charity.startDate) {
-                let xrpReceived = await this.api.getAggregatedXRP("to_id="+charity.id+"&type=tip&from_date="+charity.startDate);
-                tipbotFeed.stats.tips.received.amount = xrpReceived;
-
-                xrpDeposited = await this.api.getAggregatedXRP("user_id="+charity.id+"&type=deposit&from_date="+charity.startDate);
-            } else {
-                xrpDeposited = await this.api.getAggregatedXRP("user_id="+charity.id+"&type=deposit");
-            }
 
             let stats = tipbotFeed.stats;
             let xrpRaised = 0;
@@ -30,7 +20,7 @@ export class StatisticsService {
             }
             //normal calculation for all other charities and bots
             else {
-                xrpRaised = (stats.tips.received.amount*1000000 + xrpDeposited*1000000 + stats.donations.ilpDeposits.amount*1000000);
+                xrpRaised = (stats.tips.received.amount*1000000 + stats.donations.deposits.amount*1000000 + stats.donations.ilpDeposits.amount*1000000);
                 //deduct 1089.75 XRP from bigbuckor -> these are donations regarding his blog before he started the charity
                 if(charity.id==='951179206104403968')
                     xrpRaised = xrpRaised-(1089.75*1000000);
